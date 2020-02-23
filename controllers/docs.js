@@ -2,7 +2,7 @@ const Change = require('../models').change;
 
 module.exports = {
   list(req, res) {
-    let keys = req.query.keys;
+    let keys = req.body.keys;
     return Change
       .findAll({
         attributes: [['_id', 'id'],['change_key','key'],['change_value','value']],

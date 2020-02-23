@@ -5,5 +5,5 @@ module.exports = (app) => {
     message: 'Welcome to the Docs API!',
   }));
 
-  app.get('/api/doc-ids', docsController.list);
+  app.post('/api/doc-ids', docsController.list);
 };
