@@ -6,8 +6,8 @@ const app = express();
 const port = 3000;
 const host = '0.0.0.0';
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 require('./routes')(app);
 app.get('*', (req, res) => res.status(200).send({
